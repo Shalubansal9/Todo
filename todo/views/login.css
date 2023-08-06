@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sofia&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(to bottom right, #cce0ff, #8a2eff);
+    background-size: 100% 740px;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    background-color: black;
+    margin-left: 37%;
+    margin-top: 6%;
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    color: #cce0ff;
+    border-radius: 5px;
+}
+h1{
+    font-size: 2.5em;
+    color: #8a2eff;
+}
+.login{
+    position: relative;
+    top: 10%;
+}
+.inputName{
+    border: none;
+    background-color: black;
+    border-bottom: 2px solid #cce0ff;
+    width: 280px;
+    font-size: 15px;
+    margin-top: 36px;
+    outline: none;
+    color: #cce0ff;
+    height: 2rem;
+    padding-bottom: 2px;
+}
+.inputPass{
+    border: none;
+    background-color: black;
+    border-bottom: 2px solid #cce0ff;
+    width: 280px;
+    font-size: 15px;
+    margin-top: 50px;
+    outline: none;
+    color: #cce0ff;
+    height: 2rem;
+    padding-bottom: 2px;
+}
+#forgot{
+    margin-top: 50px;
+    font-size: 16px;
+    margin-right: 140px;
+}
+#signup {
+    margin-top: 40px;
+    font-size: 22px;
+}
+p span{
+    color:#8a2eff;
+    cursor: pointer;
+    margin-left: 6px;
+}
+p span a{
+    text-decoration: none;
+}
+button {
+    width: 293px;
+    height: 40px;
+    background-color: #8a2eff;
+    color: black;
+    border: none;
+    font-size: 22px;
+    border-radius: 20px;
+    margin-top: 12px;
+}
+button:hover{
+    cursor: pointer;
+    border: 2px solid #cce0ff;
+    color: black;
+    background-color: #cce0ff;
+}

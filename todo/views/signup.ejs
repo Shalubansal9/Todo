@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="signup" action="/signup" method="post">
+            <h1>Signup</h1>
+            <input id="inputName" class="inputName" type="text" placeholder="Enter Username" name="username">
+            <input id="inputPass" class="inputPass" type="password" placeholder="Enter Password" name="password">
+            <input id="inputCnfrmPass" class="inputPass" type="password" placeholder="Confirm Password"
+                name="cnfrmpassword">
+            <input id="inputEmail" class="inputEmail" type="email" placeholder="Enter your Email" name="email">
+            <p id="agree"><input id="checkbox" type="checkbox">I agree to the <span>Terms & Conditions</span></p>
+
+
+            <button class="register" type="submit">Register</button>
+            <p id="login">Already a User?<span><a href="/login">Login</a></span></p>
+        </form>
+    </div>
+
+    <script src="./todoScript.js" type="text/JavaScript"></script>
+
+</body>
+
+</html>
