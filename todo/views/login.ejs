@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <form class="login" action="/login" method="post">
+            <h1>Login</h1>
+            <input class="inputName" id="loginname" type="text" placeholder="Enter Username" name="username">
+            <input class="inputPass" id="loginpass" type="password" placeholder="Enter Password" name="password">
+            <p id="forgot">Forgot Password ?</p>
+
+            <% if (error){ %>
+                <p style="color: brown; margin-top: 10px;"><%= error %></p>
+            <% } %>
+
+            <button class="submit" type="submit">Login</button>
+            <p id="signup">Create Account <span><a href="/signup">Signup</a></span></p>
+        </form>
+    </div>
+    <script src="./todoScript.js" type="text/JavaScript"></script>
+
+</body>
+</html>
