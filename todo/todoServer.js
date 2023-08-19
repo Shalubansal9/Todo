@@ -96,7 +96,7 @@ app.post("/todo", function (req, res) {
             res.status(500).send("error");
             return;
         }
-        res.status(200).json(req.body);
+        res.status(200).json(todo);
     });
 });
 app.post("/todo-complete", function (req, res) {
@@ -108,7 +108,7 @@ app.post("/todo-complete", function (req, res) {
         todo = req.body;    //updates stored in todo
         let t = data.find(e => e.uid === todo.uid);  //find or match the specific id
         t.completed = true;
-        fs.writeFile("mydata.json", JSON.stringify(data), function (err) {    
+        fs.writeFile("mydata.json", JSON.stringify(data, null, 2), function (err) {    
             if (err) {
                 res.status(500).send("error");
                 return;
@@ -125,7 +125,7 @@ app.post("/delete-todo", function (req, res) {
         }
         todo = req.body;
         let rd = data.filter(e => e.uid != todo.uid);    //filter creates new arrray
-        fs.writeFile("mydata.json", JSON.stringify(rd), function (err) {         
+        fs.writeFile("mydata.json", JSON.stringify(rd, null, 2), function (err) {         
             if (err) {
                 res.status(500).send("error");
                 return;
@@ -205,7 +205,7 @@ function saveTodos(todo, callback) {
             return;
         }
         data.push(todo);
-        fs.writeFile("mydata.json", JSON.stringify(data), function (err) {
+        fs.writeFile("mydata.json", JSON.stringify(data, null, 2), function (err) {
             if (err) {
                 callback(err);
                 return;
@@ -229,7 +229,7 @@ function saveUserData(userDetails, callback) {
             return;
         }
         data.push(userDetails);
-        fs.writeFile("userdata.json", JSON.stringify(data), function (err) {
+        fs.writeFile("userdata.json", JSON.stringify(data, null, 2), function (err) {
             if (err) {
                 callback(err);
                 return;

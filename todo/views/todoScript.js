@@ -51,7 +51,8 @@ submitTask.addEventListener("click", function (e) {
     })
         .then(function (response) {             //promise to handle the response from the server
             if (response.status === 200) {      //successfull response
-                showTodo(todo);
+                return response.json(todo);
+                //showTodo(todo);
             } //else if (response.status === 401) {
             //     alert("Please Login First..!");
             //     //window.location.href = "/login";
@@ -59,7 +60,9 @@ submitTask.addEventListener("click", function (e) {
             else {
                 alert("something wrong");
             }
-        });
+        }).then(function(todo){
+            showTodo(todo);
+        })
 });
 
 //show todo in ui
