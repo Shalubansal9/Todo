@@ -18,18 +18,18 @@ const loginPass = document.getElementById("loginpass");
 
 
 submitTask.addEventListener("click", function (e) {
-    e.preventDefault();                //prevent page refresh
-    const addTask = inputTask.value;  //for getting input
+    e.preventDefault();               
+    const addTask = inputTask.value;  
     const image = inputImage.value;
     
-    if (!addTask) {                    //if input is empty
+    if (!addTask) {                   
         alert("please enter todo");
         return;
     }
     
     const todo = {
         //if key and value are same in object 
-        addTask,                   //holds the value entered by the user
+        addTask,                   
         "completed": false,
         "imagePath": image,
     }
@@ -43,26 +43,19 @@ submitTask.addEventListener("click", function (e) {
 
     fetch("/todo", {                  //fetch API call to send the todo object to the server
         method: "POST",
-        // headers: {
-        //     "Content-Type": "application/json",
-        // },
-        // body: JSON.stringify(todo),    //convert object into json
         body:formData,
     })
-        .then(function (response) {             //promise to handle the response from the server
-            if (response.status === 200) {      //successfull response
+        .then(function (response) {            
+            if (response.status === 200) {      
                 return response.json(todo);
-                //showTodo(todo);
-            } //else if (response.status === 401) {
-            //     alert("Please Login First..!");
-            //     //window.location.href = "/login";
-            // }
+            
+            } 
             else {
                 alert("something wrong");
             }
         }).then(function(todo){
             showTodo(todo);
-        })
+        });
 });
 
 //show todo in ui
@@ -74,7 +67,7 @@ function showTodo(todo) {
 
     const text = document.createElement("div");
     text.style.display = "contents";
-    text.innerText = todo.addTask;    // assign addTask item from todo object in text element
+    text.innerText = todo.addTask;    
     todoListItem.appendChild(text);
 
     const span = document.createElement("span");
@@ -197,6 +190,7 @@ register.addEventListener("click", function (e) {
         if (response.status === 200) {      //successfull response
             //console.log(userDetails);
             alert("Signup successful. Please login.");
+            
         }
         else if (response.status === 500) {
             alert("User already Exist, Please Login to Continue..");
